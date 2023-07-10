@@ -1,0 +1,197 @@
+Difference between Compiler and Interpreter ?
+
+Compiler 
+
+1) A compiler translates the entire source code in a single run
+2) It consumes less time, it is faster than an interpreter
+3) It is more efficient.
+4) CPU utilization is more.
+5) Both syntactic and semantic errors can be checked.
+
+
+Interpreter
+
+1) An interpreter translates the entire source code line by line.
+2) It consumes much more time than the compiler, it is slower than compiler.
+3) It is less efficient.
+4) CPU utilization is less as compared to the compiler.
+5) Only syntactic errors are checked.
+
+Q2 what is the difference between JDK , JRE and JVM?
+
+JDK
+Java Development Kit is a kit that provides the environment to develop and execute the java program. 
+It includes two things :
+
+--->Development tool 
+--->JRE 
+
+JRE 
+Java Runtime Environment is an installation package that provides an environment to only run the java program
+onto the machine .JRE is used by only those who want to run java program.
+
+JVM 
+Java Virtual Machine is very important part for both JDK and JRE because it is contained or inbuilt in both.
+whatever java program you run using JRE or JDK goes into JVM and JVM is responsible for executing the java program line by line, 
+hence it is also known as an interpreter.
+
+
+Q3.How many types of memory areas are allocated by JVM?
+
+The memory in the JVM is divided into 5 different parts: 
+
+Class(Method) Area
+Heap
+Stack
+Program Counter Register
+Native Method Stack
+
+1. Class (Method) Area (.class file / static data)
+The class method area is the memory block that stores the class code, variable code(static variable, runtime constant), method code, 
+and the constructor of a Java program. (Here method means the function which is written inside the class).
+ It stores class-level data of every class such as the runtime constant pool, field and method data, the code for methods.
+
+2. Heap (Instance variable/Object data)
+The Heap area is the memory block where objects are created or objects are stored.
+ Heap memory allocates memory for class interfaces and arrays (an array is an object).
+ It is used to allocate memory to objects at run time
+
+3. Stack (local variable)
+Each thread has a private JVM stack, created at the same time as the thread.
+ It is used to store data and partial results which will be needed while returning value for method and performing dynamic linking.
+
+Java Stack stores frames and a new frame is created each time at every invocation of the method.
+ A frame is destroyed when its method invocation completes
+
+4. Program Counter Register: (address of next instruction which needs to be executed)
+Each JVM thread that carries out the task of a specific method has a program counter register associated with it. 
+The non-native method has a PC that stores the address of the available JVM instruction whereas, in a native method, the value of the program counter 
+is undefined. PC register is capable of storing the return address or a native pointer on some specific platform.
+
+5. Native method Stacks: (code of other language which would be required for java)
+Also called C stacks, native method stacks are not written in Java language.
+ This memory is allocated for each thread when it’s created And it can be of a fixed or dynamic nature.
+ 
+ 
+ 
+ What is JIT compiler?
+ 
+  It is used to increase the efficiency of an interpreter. It compiles the entire bytecode and changes it to native code so
+  whenever the interpreter sees repeated method calls, 
+  JIT provides direct native code for that part so re-interpretation is not required, thus efficiency is improved.
+ 
+ The JIT or Just-In-Time compiler is an essential part of the JRE (Java Runtime Environment),
+ that is responsible for performance optimization of java based applications during run time.
+ 
+ In order to improve performance, JIT compilers interact with the Java Virtual Machine (JVM) at run time and compile suitable bytecode sequences 
+ into native machine code. While using a JIT compiler, the hardware is able to execute the native code, 
+ as compared to having the JVM interpret the same sequence of bytecode repeatedly.
+
+
+
+Q5.What are the various access specifiers in Java? 
+
+There are four types of Java access modifiers:
+
+1) Private: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+
+2) Default: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. 
+If you do not specify any access level, it will be the default.
+
+3) Protected: The access level of a protected modifier is within the package and outside the package through child class. 
+If you do not make the child class, it cannot be accessed from outside the package.
+
+4) Public: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class,
+ within the package and outside the package.
+ 
+ 
+ Q6.What is a compiler in Java?
+
+-->A compiler is a translator that converts the high-level language into the machine language.
+
+-->High-level language is written by a developer and machine language can be understood by the processor.
+
+-->Compiler is used to show errors to the programmer.
+
+-->The main purpose of compiler is to change the code written in one language without changing the meaning of the program.
+
+-->When you execute a program which is written in HLL programming language then it executes into two parts.
+
+-->In the first part, the source program compiled and translated into the object program (low level language).
+
+-->In the second part, object program translated into the target program through the assembler.
+
+
+Q7.Explain the types of variables in Java?
+
+There are three types of variables in Java:
+
+1) Local Variable
+A variable declared inside the body of the method is called local variable. You can use this variable only within
+ that method and the other methods in the class aren't even aware that the variable exists.
+
+A local variable cannot be defined with "static" keyword.
+
+2) Instance Variable
+A variable declared inside the class but outside the body of the method, is called an instance variable. It is not declared as static.
+
+It is called an instance variable because its value is instance-specific and is not shared among instances.
+
+3) Static variable
+A variable that is declared as static is called a static variable. It cannot be local. You can create a single copy of the static variable
+ and share it among all the instances of the class.
+ Memory allocation for static variables happens only once when the class is loaded in the memory.
+ 
+ 
+ Q8.What are the Datatypes in Java?
+ 
+ Data types specify the different sizes and values that can be stored in the variable. There are two types of data types in Java:
+
+Primitive data types: The primitive data types include boolean, char, byte, short, int, long, float and double.
+
+Non-primitive data types: The non-primitive data types include Classes, Interfaces, and Arrays.
+
+
+Q9.What are the identifiers in java?
+
+Identifiers in Java are symbolic names used for identification. They can be a class name, variable name, method name, package name, constant name, and more. However,
+ In Java, There are some reserved words that can not be used as an identifier.
+ 
+ Example :
+ public class HelloJava {  
+    public static void main(String[] args) {  
+        System.out.println("Hello JavaTpoint");  
+    }  
+}  
+
+
+From the above example, we have the following Java identifiers:
+
+HelloJava (Class name)
+main (main method)
+String (Predefined Class name)
+args (String variables)
+System (Predefined class)
+out (Variable name)
+println (method)
+
+
+
+Q10.Explain the architecture of JVM 
+
+1) Method area: In the method area, all class level information like class name, immediate parent class name, 
+methods and variables information etc. are stored, including static variables. There is only one method area per JVM, and it is a shared resource. 
+From java 8, static variables are now stored in Heap area.
+
+2) Heap area: Information of all objects is stored in the heap area. There is also one Heap Area per JVM. It is also a shared resource.
+
+3) Stack area: For every thread, JVM creates one run-time stack which is stored here. Every block of this stack is called activation 
+record/stack frame which stores methods calls. All local variables of that method are stored in their corresponding frame.
+ After a thread terminates, its run-time stack will be destroyed by JVM. It is not a shared resource.
+ 
+4) PC Registers: Store address of current execution instruction of a thread. Obviously, each thread has separate PC Registers.
+Native method stacks: For every thread, a separate native stack is created. It stores native method information
+
+
+
+
